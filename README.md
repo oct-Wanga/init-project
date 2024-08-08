@@ -1,3 +1,8 @@
+## 폴더 구조
+
+* 폴더구조는 아래 링크에 있는 컨벤션 확인 바랍니다.
+* https://github.com/CloudServiceHQ/coding-conventions/wiki/React-Code-Conventions#2-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0
+
 ## 사용된 라이브러리
 
 * axios : 통신
