@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 100;
+  src:
+    local('Pretendard Thin'),
+    url('/fonts/Pretendard-Thin.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Thin.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 200;
+  src:
+    local('Pretendard ExtraLight'),
+    url('/fonts/Pretendard-ExtraLight.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-ExtraLight.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Pretendard Light'),
+    url('/fonts/Pretendard-Light.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Light.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Pretendard Regular'),
+    url('/fonts/Pretendard-Regular.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Regular.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Pretendard Medium'),
+    url('/fonts/Pretendard-Medium.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Medium.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Pretendard SemiBold'),
+    url('/fonts/Pretendard-SemiBold.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-SemiBold.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Pretendard Bold'),
+    url('/fonts/Pretendard-Bold.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Bold.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    local('Pretendard ExtraBold'),
+    url('/fonts/Pretendard-ExtraBold.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-ExtraBold.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local('Pretendard Black'),
+    url('/fonts/Pretendard-Black.subset.woff2') format('woff2'),
+    url('/fonts/Pretendard-Black.subset.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LG Smart', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('LG Smart Thin'),
+    url('/fonts/LG\ Smart\ Light.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LG Smart', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('LG Smart Regular'),
+    url('/fonts/LG\ Smart\ Regular.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LG Smart', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('LG Smart Regular'),
+    url('/fonts/LG\ Smart\ Bold.ttf.ttf') format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'LG Smart', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('LG Smart Bold'),
+    url('/fonts/LG\ Smart\ Bold.ttf.ttf') format('ttf');
+  font-display: swap;
+}
+
+*,
+:after,
+:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  word-break: break-all;
+  word-wrap: break-word;
+  vertical-align: baseline;
+  line-height: 1.2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+legend,
+caption,
+.hide {
+  position: absolute;
+  left: -99999px;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999em;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.hidden,
+.hide {
+  display: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+address,
+em {
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  border-radius: 0;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  font-size: inherit;
+  color: inherit;
+  line-height: normal;
+  cursor: pointer;
+}
+
+a,
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+select {
+  border-radius: 0;
+}
+
+input,
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+iframe {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+mark {
+  background-color: transparent;
+}
+
+i {
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: 0px;
+  word-break: break-all;
+  word-wrap: break-word;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+input {
+  background: transparent;
+  font-family: 'pretendard';
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+input[type='number'] input[type='button'],
+input[type='reset'],
+input[type='text'],
+input[type='password'],
+input[type='submit'],
+input[type='search'],
+input[type='tel'],
+input[type='email'] {
+  text-overflow: ellipsis;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='submit']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='email']:focus {
+  outline: none;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.full {
+  width: 100% !important;
+}
+
+.red {
+  color: #f74949 !important;
+}
+
+.flex {
+  display: flex !important;
+}

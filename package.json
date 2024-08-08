@@ -1,0 +1,48 @@
+{
+  "name": "Project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "env-cmd -f .env.local next dev",
+    "build": "env-cmd -f .env.local next build",
+    "build:dev": "env-cmd -f .env.develop next build",
+    "start:dev": "env-cmd -f .env.develop next start",
+    "build:stg": "env-cmd -f .env.stage next build",
+    "start:stg": "env-cmd -f .env.stage next start",
+    "build:prod": "env-cmd -f .env.production next build",
+    "start:prod": "env-cmd -f .env.production next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.51.21",
+    "@tanstack/react-query-devtools": "^5.32.0",
+    "@tippyjs/react": "^4.2.6",
+    "axios": "^1.6.8",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.12",
+    "env-cmd": "^10.1.0",
+    "next": "14.2.3",
+    "next-auth": "^4.24.7",
+    "react": "^18",
+    "react-cookie": "^7.2.0",
+    "react-dom": "^18",
+    "react-loading-skeleton": "^3.4.0",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "14.2.3",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5"
+  }
+}
