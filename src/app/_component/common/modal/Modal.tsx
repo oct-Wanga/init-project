@@ -3,7 +3,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import Button from '@_component/common/button/Button';
-import Icon from '@_component/Icon/Icon';
 import useModalStore from '@store/useModalStore';
 
 import styles from './Modal.module.css';

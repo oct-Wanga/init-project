@@ -2,43 +2,37 @@ import React, { ButtonHTMLAttributes, ForwardedRef } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 
-import Icon from '../Icon/Icon';
-
 import styles from './IconButton.module.css';
 
 const cx = classNames.bind(styles);
 
-export type IconSize = 'w-48' | 'w-42' | 'w-40' | 'w-32' | 'w-24' | 'w-20';
-export type IconVariant = 'secondary' | 'tertiary' | 'transparent' | 'ghost';
+export type BtnSize = 'w-48' | 'w-42' | 'w-40' | 'w-32' | 'w-24' | 'w-20';
+export type IconVariant = 'secondary' | 'tertiary' | 'transparent';
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  size: IconSize;
+  icon: React.ReactNode;
+  btnSize: BtnSize;
   variant: IconVariant;
   tippyPlacement?: 'top' | 'bottom' | 'left' | 'right';
   tippyArrow?: boolean;
   tippyClassName?: string;
   label?: string;
-  children?: React.ReactNode;
-  loading?: boolean;
-  loadingIconSize?: IconSize;
 }
 
 function IconButton(
   {
-    size,
+    icon,
+    btnSize,
     variant,
     tippyPlacement = 'top',
     tippyArrow = false,
     tippyClassName,
     label,
-    children,
-    loading,
-    loadingIconSize,
     ...props
   }: IconButtonProps,
   ref: ForwardedRef<HTMLButtonElement>,
 ) {
-  const classname = cx('icon-btn', size, variant, { loading }, props.className);
+  const classname = cx('icon-btn', btnSize, variant, props.className);
 
   return (
     <Tippy
@@ -46,11 +40,11 @@ function IconButton(
       disabled={!label}
       arrow={tippyArrow}
       placement={tippyPlacement}
-      theme="lg"
+      theme="default"
       className={tippyClassName}
     >
       <button {...props} className={classname} ref={ref}>
-        {loading ? <Icon.Loading size={loadingIconSize ?? size} /> : children}
+        {icon}
       </button>
     </Tippy>
   );

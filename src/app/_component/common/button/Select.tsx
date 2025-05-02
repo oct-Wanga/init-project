@@ -1,14 +1,12 @@
 import React, { InputHTMLAttributes } from 'react';
 import classNames from 'classnames/bind';
 import Button from '@_component/common/button/Button';
-import Icon from '@_component/Icon/Icon';
 import useOnClickOutside from '@_hook/useOnClickOutside';
 
-import styles from '../input/Input.module.css';
+import styles from './Select.module.css';
 
 const cx = classNames.bind(styles);
 
-// @flow
 interface SelectProps extends Omit<InputHTMLAttributes<HTMLButtonElement>, 'size'> {
   children: React.ReactNode;
   required?: boolean;
@@ -33,7 +31,7 @@ function Select({ children, label, size = 'w-20', required = true, value, ...pro
           variant="transparent"
           size="full"
           ref={triggerRef}
-          endIcon={<Icon.SelectArrow size={size} />}
+          // endIcon={<Icon.SelectArrow size={size} />}
         >
           {value}
         </Button>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Header from '@_component/Header';
 import GlobalRenderer from '@lib/GlobalRenderer';
 import RQProvider from '@lib/ReactQueryProvider';
 import SpriteRenderer from '@lib/SpriteRenderer';
@@ -152,10 +151,7 @@ export default function RootLayout({
         <RQProvider>
           <SpriteRenderer />
           <GlobalRenderer />
-          <div className="wrap">
-            <Header />
-            {children}
-          </div>
+          <div className="wrap">{children}</div>
         </RQProvider>
       </body>
     </html>
