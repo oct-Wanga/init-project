@@ -25,6 +25,7 @@
       "@api/*": ["./src/app/_api/*"],
       "@component/*": ["./src/app/_components/*"],
       "@hooks/*": ["./src/app/_hook/*"],
+      "@public/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
