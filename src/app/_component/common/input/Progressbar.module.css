@@ -1,0 +1,74 @@
+.progress-bar-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: #ced0f3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-track.no-border {
+  border-radius: 0px;
+}
+
+.progress-track.primary {
+  background-color: #ced0f3;
+}
+
+.progress-track.fail {
+  background-color: #70737c33;
+}
+
+.progress-track.done {
+  background-color: var(--gray-15);
+}
+
+.progress-track.green {
+  background-color: rgb(112 115 124 / 12%);
+}
+
+.progress-track.black {
+  background-color: var(--gray-20);
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-60); /* 기본 primary */
+  transition: width 0.3s ease;
+}
+
+/* Size Variants */
+.medium .progress-track {
+  height: 4px;
+}
+
+.large .progress-track {
+  height: 8px;
+}
+
+/* Color Variants */
+.primary .progress-fill {
+  background-color: var(--primary-60);
+}
+
+.fail .progress-fill {
+  background-color: var(--red-50);
+}
+
+.done .progress-fill {
+  background-color: var(--gray-15);
+}
+
+.green .progress-fill {
+  background-color: var(--green-50);
+}
+
+.black .progress-fill {
+  background-color: var(--gray-60);
+}

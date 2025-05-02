@@ -1,0 +1,80 @@
+.radio-wrapper {
+  width: 100%;
+  flex-flow: row wrap;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.radio-wrapper input {
+  position: absolute;
+  display: none;
+}
+
+.radio-wrapper label {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.radio-wrapper label div {
+  font-size: 15px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: -0.24px;
+  text-align: left;
+  color: var(--gray-85);
+}
+
+.radio-wrapper label.bottom {
+  flex-direction: column;
+}
+
+.radio-wrapper label.top {
+  flex-direction: column-reverse;
+}
+
+.radio-wrapper label.left {
+  flex-direction: row-reverse;
+}
+
+.w-24::before {
+  width: 24px;
+  height: 24px;
+}
+
+.w-28::before {
+  width: 28px;
+  height: 28px;
+}
+
+.radio-wrapper:hover {
+  background-color: var(--gray-05);
+}
+
+.radio-wrapper:active {
+  background-color: var(--gray-10);
+}
+
+.radio-wrapper label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-wrapper label div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

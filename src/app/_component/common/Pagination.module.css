@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  place-content: center center;
+  font-size: 15px;
+  font-weight: 500;
+  flex-grow: 0;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: -0.24px;
+  text-align: center;
+  color: var(--gray-60);
+}
+
+.wrapper .icon-btn-wrapper.right i {
+  transform: rotate(180deg);
+}
+
+.wrapper .icon-btn-wrapper.left i {
+  transform: rotate(180deg);
+}
+
+.wrapper .icon-btn-wrapper button {
+  width: 32px;
+  height: 32px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  padding: 0;
+  border-right: 0;
+  border-left: solid 1px var(--gray-15);
+  border-top: solid 1px var(--gray-15);
+  border-bottom: solid 1px var(--gray-15);
+}
+
+
+.wrapper .icon-btn-wrapper:first-child button {
+  border-radius: 6px 0 0 6px;
+}
+
+.wrapper .icon-btn-wrapper:nth-child(2) button {
+  border-radius: 0;
+}
+
+.wrapper .icon-btn-wrapper:last-child button {
+  border-right: solid 1px var(--gray-15);
+  border-radius: 0 6px 6px 0;
+
+}
+
+.wrapper .icon-btn-wrapper:nth-last-child(2) button {
+  border-radius: 0;
+
+}
+
+.wrapper .icon-btn-wrapper:not(.disabled) button:hover,
+.wrapper .icon-btn-wrapper:not(.disabled) button:active {
+  border-right: 0;
+  border-left: solid 1px var(--gray-20);
+  border-top: solid 1px var(--gray-20);
+  border-bottom: solid 1px var(--gray-20);
+  background-color: var(--gray-10);
+}
+
+.wrapper .icon-btn-wrapper:not(.disabled) button:hover + .icon-btn-wrapper {
+  border-left: solid 1px var(--gray-20);
+}
+
+.wrapper .icon-btn-wrapper:not(.disabled):last-child:hover button,
+.wrapper .icon-btn-wrapper:not(.disabled):last-child:active button {
+  border-right: solid 1px var(--gray-20);
+}
+
+.pagination-selected button {
+  background-color: var(--gray-15) !important;
+  border-left: solid 1px var(--gray-20) !important;
+  border-top: solid 1px var(--gray-20) !important;
+  border-bottom: solid 1px var(--gray-20) !important;
+}
+
+.pagination-selected + .icon-btn-wrapper button {
+  border-left: solid 1px var(--gray-20) !important;
+}

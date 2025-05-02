@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * ### 외부 영역 클릭 감지 Hook
@@ -8,7 +8,10 @@ import React, { useEffect, useState } from 'react';
  * @returns {isOpen: 띄우는 변수}
  */
 
-function useOnClickOutside(triggerRef: React.RefObject<any>, nodeRef: React.RefObject<any>, disabled?: boolean) {
+function useOnClickOutside<T extends HTMLElement, D extends HTMLElement>(disabled?: boolean) {
+  const triggerRef = useRef<T>(null);
+  const nodeRef = useRef<D>(null);
+
   const [isOpen, setIsOpen] = useState(false);
   // 외부요소 클릭 감지 후 [모달, 드롭박스 등]을 닫는 함수
   const handleClickOutside = (event: Event) => {
@@ -16,10 +19,6 @@ function useOnClickOutside(triggerRef: React.RefObject<any>, nodeRef: React.RefO
       return;
     }
 
-    if (triggerRef.current.contains(event.target as Node)) {
-      setIsOpen(p => !p);
-      return;
-    }
     if (
       nodeRef.current &&
       nodeRef.current.contains(event.target as Node) // 모달 외부 요소라면
@@ -27,6 +26,11 @@ function useOnClickOutside(triggerRef: React.RefObject<any>, nodeRef: React.RefO
       setIsOpen(true);
       return;
     }
+    if (triggerRef.current.contains(event.target as Node)) {
+      setIsOpen(p => !p);
+      return;
+    }
+
     if (isOpen && !triggerRef.current.contains(event.target as Node)) {
       setIsOpen(false);
     }
@@ -34,16 +38,16 @@ function useOnClickOutside(triggerRef: React.RefObject<any>, nodeRef: React.RefO
 
   useEffect(() => {
     if (!disabled) {
-      document.addEventListener('click', handleClickOutside, true); // 이벤트 캡처링
+      document.addEventListener('click', handleClickOutside);
     }
     return () => {
       if (!disabled) {
-        document.removeEventListener('click', handleClickOutside, true);
+        document.removeEventListener('click', handleClickOutside);
       }
     };
   }, [isOpen, disabled]);
 
-  return { isOpen };
+  return { isOpen, triggerRef, nodeRef, setIsOpen };
 }
 
 export default useOnClickOutside;

@@ -1,0 +1,23 @@
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  display: inline-block;
+}
+
+
+.ellipsis-height {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.two {
+  -webkit-line-clamp: 2;
+}

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Header from '@_component/Header';
+import GlobalRenderer from '@lib/GlobalRenderer';
 import RQProvider from '@lib/ReactQueryProvider';
+import SpriteRenderer from '@lib/SpriteRenderer';
 
 import './_styles/globals.css';
 
@@ -16,8 +18,140 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <title />
+        <link rel="preload" href="/sprite.svg" as="image" type="image/svg+xml" />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Black.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Black.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Bold.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Bold.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraBold.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraBold.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraLight.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraLight.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Light.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Light.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Medium.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Medium.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Regular.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Regular.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-SemiBold.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-SemiBold.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Thin.subset.woff"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Thin.subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <RQProvider>
+          <SpriteRenderer />
+          <GlobalRenderer />
           <div className="wrap">
             <Header />
             {children}

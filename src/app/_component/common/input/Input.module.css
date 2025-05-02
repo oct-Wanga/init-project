@@ -1,0 +1,174 @@
+.label-wrapper {
+  width: 100%;
+  height: 26px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  padding: 0 0 6px 2px;
+}
+
+.input-label {
+  height: 20px;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: var(--gray-60);
+}
+
+.input-area {
+  width: 100%;
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--gray-05);
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: var(--gray-85);
+}
+
+.input-helperText {
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: var(--gray-50);
+  height: 24px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0 0 2px;
+}
+
+.dot {
+  width: 6px;
+  height: 20px;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: var(--red-50);
+}
+
+.input-textarea::placeholder,
+.input-area::placeholder {
+  height: 20px;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: var(--gray-45);
+}
+
+.input-area:hover,
+.input-textarea:hover {
+  background-color: #f5f5f5;
+}
+
+.input-wrapper.error .input-area,
+.input-wrapper.error .input-textarea {
+  background-color: var(--red-05);
+}
+
+.input-wrapper.error .input-helperText {
+  color: var(--red-50);
+}
+
+.input-area:disabled {
+  border: solid 2px var(--gray-15);
+  background-color: var(--gray-05);
+  color: var(--gray-35);
+}
+
+.input-textarea:disabled {
+  background-color: var(--gray-05);
+  color: var(--gray-35);
+}
+
+.input-area:disabled::placeholder,
+.input-textarea:disabled::placeholder {
+  color: var(--gray-35);
+}
+
+.input-textarea {
+  width: 100%;
+  height: 98px;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--gray-05);
+  resize: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: var(--gray-85);
+}
+
+.input-textarea:focus {
+  border: none;
+  outline: none; /* 기본 파란 테두리도 제거 */
+}
+
+.input-wrapper.on button {
+  border-radius: 8px;
+  border: solid 1.4px var(--primary-60);
+  background-color: var(--white);
+}
+
+.input-wrapper.on button i {
+  transform: rotate(180deg);
+}
+
+.select-wrapper .select-content {
+  display: none;
+}
+
+.select-wrapper .input-wrapper.on + .select-content {
+  display: block;
+}

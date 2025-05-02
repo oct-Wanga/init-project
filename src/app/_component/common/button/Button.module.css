@@ -1,0 +1,322 @@
+/* 버튼 종류 */
+.btn {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn span {
+  font-weight: inherit;
+}
+.primary {
+  background-color: var(--primary-60);
+  color: var(--gray-05);
+}
+
+.primary.loading {
+  background-color: var(--gray-10);
+  color: var(--gray-35);
+  pointer-events: none;
+  cursor: default;
+}
+
+.primary:hover::before {
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(7deg, transparent 32%, white 100%);
+  animation: fade-in-out 2s ease-in-out infinite;
+}
+
+.primary.full:hover::before {
+  background-image: linear-gradient(30deg, transparent 32%, white 100%);
+}
+
+.primary.large:hover::before {
+  background-image: linear-gradient(30deg, transparent 44%, white 100%);
+}
+
+.primary.medium:hover::before {
+  background-image: linear-gradient(30deg, transparent 40%, white 100%);
+}
+
+.primary.xSmall:hover::before {
+  background-image: linear-gradient(30deg, transparent 40%, white 100%);
+}
+
+.primary.modal:hover::before {
+  background-image: linear-gradient(30deg, transparent 40%, white 100%);
+}
+
+.primary.large:disabled::before,
+.primary.medium:disabled::before,
+.primary.xSmall:disabled::before,
+.primary.modal:disabled::before {
+  background-image: none;
+}
+
+.primary:disabled {
+  background-color: var(--gray-10);
+  color: var(--gray-35);
+}
+
+.secondary {
+  background-color: var(--gray-90);
+  color: var(--gray-10);
+}
+
+.secondary.loading {
+  background-color: var(--gray-10);
+  color: var(--gray-35);
+  pointer-events: none;
+  cursor: default;
+}
+
+.secondary:hover {
+  background-color: var(--gray-70);
+}
+
+.secondary:active {
+  background-color: var(--gray-55);
+}
+
+.secondary:disabled {
+  background-color: var(--gray-10);
+  color: var(--gray-35);
+}
+
+.secondary.modal:hover {
+  background-color: var(--gray-55);
+}
+
+.secondary.modal:active {
+  background-color: var(--gray-70);
+}
+
+.secondary.modal:disabled {
+  background-color: var(--gray-10);
+  color: var(--gray-35);
+}
+
+.tertiary {
+  border: solid 1px var(--gray-20);
+  color: var(--gray-85);
+}
+
+.tertiary.loading {
+  border: solid 1px var(--gray-15);
+  color: var(--gray-35);
+  pointer-events: none;
+  cursor: default;
+}
+
+.tertiary:hover {
+  border: solid 1px var(--gray-30);
+  background-color: var(--gray-10);
+}
+
+.tertiary:active {
+  border: solid 1px var(--gray-30);
+  background-color: var(--gray-15);
+}
+
+.tertiary:disabled {
+  border: solid 1px var(--gray-15);
+  color: var(--gray-35);
+  background-color: transparent;
+}
+
+.transparent {
+  color: var(--gray-85);
+}
+
+.transparent.loading {
+  color: var(--gray-35);
+  pointer-events: none;
+  cursor: default;
+}
+
+.transparent:hover {
+  background-color: var(--gray-10);
+}
+
+.transparent:active {
+  background-color: var(--gray-15);
+}
+
+.transparent:disabled {
+  color: var(--gray-35);
+}
+
+.transparent.modal:hover {
+  background-color: var(--gray-05);
+}
+
+.transparent.modal:active {
+  background-color: var(--gray-10);
+}
+
+.transparent.modal:disabled {
+  color: var(--gray-35);
+  background-color: transparent;
+}
+
+.transparent.full.active {
+  color: var(--gray-70) !important;
+  background-color: var(--gray-05) !important;
+  font-weight: 600 !important;
+}
+
+.transparent.full.active span {
+  font-weight: 600;
+}
+
+/* annotation */
+.annotation {
+  border-radius: 6px !important;
+  color: #afb1b5;
+  background-color: #f4f4f5;
+}
+
+.annotation:hover {
+  color: var(--gray-60);
+  background-color: #eaeaeb;
+}
+.annotation.active {
+  color: #f4f4f5;
+  background-color: #313235;
+}
+
+/* 크기 */
+.modal {
+  height: 38px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.47;
+  letter-spacing: -0.24px;
+}
+
+.large {
+  height: 40px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.44;
+  letter-spacing: -0.25px;
+}
+
+.medium {
+  height: 32px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.47;
+  letter-spacing: -0.24px;
+}
+
+.xSmall {
+  height: 24px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+}
+
+.full {
+  padding: 6px 0;
+  height: 46px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.44;
+  letter-spacing: -0.25px;
+}
+
+.none {
+  padding: 0;
+  font-weight: 500;
+  line-height: 1.44;
+  letter-spacing: -0.25px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.none.transparent {
+  color: var(--gray-60);
+}
+
+.none.transparent:not(:disabled):hover {
+  color: var(--gray-60);
+  background-color: var(--gray-10);
+}
+
+.none.transparent.active {
+  color: var(--gray-60);
+  background-color: var(--gray-10);
+}
+
+.full > span,
+.medium > span,
+.large > span,
+.modal > span {
+  padding: 0 4px;
+}
+
+.xSmall > span {
+  padding: 0 2px;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.select-btn {
+  width: 100%;
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: var(--gray-05);
+  border: solid 1.4px var(--gray-05);
+  color: var(--gray-85);
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination-selected {
+  background-color: var(--gray-15) !important;
+  border-left: solid 1px var(--gray-20) !important;
+  border-top: solid 1px var(--gray-20) !important;
+  border-bottom: solid 1px var(--gray-20) !important;
+}
+
+.pagination-selected + button {
+  border-left: solid 1px var(--gray-20) !important;
+}
