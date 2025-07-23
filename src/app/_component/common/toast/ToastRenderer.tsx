@@ -1,9 +1,8 @@
 'use client';
 
 import React, { Fragment } from 'react';
+import PortalRenderer from '@lib/PortalRenderer';
 import useToastStore from '@store/useToastStore';
-
-import PortalRenderer from '../portal/PortalRenderer';
 
 function ToastRenderer() {
   const { toasts } = useToastStore();
