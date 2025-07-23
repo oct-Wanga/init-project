@@ -1,0 +1,129 @@
+.label-wrapper {
+  width: 100%;
+  height: 24px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  padding: 0 0 4px 2px;
+}
+
+.input-label {
+  height: 20px;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: #4e5055;
+}
+
+.dot {
+  width: 6px;
+  height: 20px;
+  flex-grow: 0;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: #f73b3b;
+}
+
+.input-area {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px 14px 2px;
+  border-bottom: solid 1.2px #dfe0e1;
+
+  &:hover {
+    border-bottom: solid 1.2px #bfc0c4;
+  }
+
+  &:focus-within:not(:has(.error)) {
+    border-bottom: solid 1.2px #5c5cf5;
+  }
+
+  &:has(.error) {
+    border-bottom: solid 1.2px #f73b3b;
+  }
+
+  .input:disabled {
+    &::placeholder {
+      color: #afb1b5;
+    }
+  }
+
+  .input:disabled + svg {
+    color: #afb1b5;
+  }
+
+  &:has(.input:disabled) {
+    border-bottom: solid 1.2px #eaeaeb;
+  }
+}
+
+.input-area.open .chevron {
+  transform: rotate(180deg);
+}
+
+.input {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #131415;
+
+  &::placeholder {
+    height: 20px;
+    flex-grow: 1;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #95979d;
+  }
+}
+
+.input-helperText {
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  letter-spacing: -0.12px;
+  text-align: left;
+  color: #f73b3b;
+  height: 24px;
+  align-self: stretch;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding-top: 4px;
+}
