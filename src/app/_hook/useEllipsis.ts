@@ -1,27 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function useEllipsis<T extends HTMLElement>() {
+export function useEllipsis<T extends HTMLElement>() {
   const elementRef = useRef<T>(null);
   const [isEllipsisActive, setIsEllipsisActive] = useState(false);
 
   useEffect(() => {
     const { current } = elementRef;
-    if (!current) {
-      return;
-    }
-    const hasEllipsis = current.scrollWidth > current.clientWidth;
+    if (!current) return () => {};
 
-    if (hasEllipsis) {
-      setIsEllipsisActive(true);
-      return;
-    }
-    setIsEllipsisActive(false);
+    const observer = new ResizeObserver(() => {
+      if (!current) return;
+      setIsEllipsisActive(current.scrollWidth > current.clientWidth);
+    });
+
+    observer.observe(current);
+    // 최초 체크
+    setIsEllipsisActive(current.scrollWidth > current.clientWidth);
+
+    return () => observer.disconnect();
   }, []);
 
-  return {
-    elementRef,
-    isEllipsisActive,
-  };
+  return { elementRef, isEllipsisActive };
 }
 
 export function useEllipsisHeight<T extends HTMLElement>() {
@@ -30,20 +29,19 @@ export function useEllipsisHeight<T extends HTMLElement>() {
 
   useEffect(() => {
     const { current } = elementRef;
-    if (!current) {
-      return;
-    }
-    const hasEllipsis = current.scrollHeight > current.clientHeight;
+    if (!current) return () => {};
 
-    if (hasEllipsis) {
-      setIsEllipsisActive(true);
-      return;
-    }
-    setIsEllipsisActive(false);
+    const observer = new ResizeObserver(() => {
+      if (!current) return;
+      setIsEllipsisActive(current.scrollHeight > current.clientHeight);
+    });
+
+    observer.observe(current);
+    // 최초 체크
+    setIsEllipsisActive(current.scrollHeight > current.clientHeight);
+
+    return () => observer.disconnect();
   }, []);
 
-  return {
-    elementRef,
-    isEllipsisActive,
-  };
+  return { elementRef, isEllipsisActive };
 }

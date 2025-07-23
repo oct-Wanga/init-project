@@ -1,13 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * ### 외부 영역 클릭 감지 Hook
- * @param {React.RefObject<any>} triggerRef : 트리거 ref
- * @param {React.RefObject<any> | undefined} nodeRef  트리거 후 활성화될 요소 ref(드롭박스, 팝업, 모달 등)
- * @param disabled 함수 사용 여부
- * @returns {isOpen: 띄우는 변수}
- */
-
 function useOnClickOutside<T extends HTMLElement, D extends HTMLElement>(disabled?: boolean) {
   const triggerRef = useRef<T>(null);
   const nodeRef = useRef<D>(null);

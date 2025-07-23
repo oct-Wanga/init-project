@@ -5,7 +5,6 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 dayjs.extend(duration);
 
-// TODO: 임시로 dayjs.Dayjs 타입 추가
 export default function useGetDayText(time: string | number | dayjs.Dayjs, type?: 'timestamp' | 'elapsedTime'): string {
   const targetTime = dayjs(time);
 

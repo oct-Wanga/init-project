@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-// @flow
-
 export default function useToolTipClick(init: boolean) {
   const [visible, setVisible] = useState(init);
   const [isClickMode, setIsClickMode] = useState(init);
