@@ -35,3 +35,9 @@ next-env.d.ts
 
 .idea
 package-lock.json
+
+/src/assets/iconNames.ts
+/src/assets/index.ts
+/src/assets/dev-sprite.svg
+/public/sprite.svg
+certificates

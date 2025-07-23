@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,17 +21,48 @@
         "name": "next"
       }
     ],
+    "types": [
+      "gtag.js"
+    ],
     "paths": {
-      "@*": ["./src/*", "./src/app/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@store/*": ["./src/store/*"],
-      "@type/*": ["./src/type/*"],
-      "@api/*": ["./src/app/_api/*"],
-      "@component/*": ["./src/app/_components/*"],
-      "@hooks/*": ["./src/app/_hook/*"],
-      "@public/*": ["./public/*"]
+      "@*": [
+        "./src/*",
+        "./src/app/*",
+        "./src/app/(main)/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ],
+      "@messages/*": [
+        "./src/messages/*"
+      ],
+      "@type/*": [
+        "./src/type/*"
+      ],
+      "@api/*": [
+        "./src/app/_api/*"
+      ],
+      "@component/*": [
+        "./src/app/_components/*"
+      ],
+      "@hooks/*": [
+        "./src/app/_hook/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

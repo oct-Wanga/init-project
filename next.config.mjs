@@ -7,21 +7,14 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Dockerfile
+  output: 'standalone',
+
   // React strict mode 설정
   reactStrictMode: false, // 개발 중 불필요한 double-render 방지
 
   // Next.js의 swc 기반 빌드 최적화 기능 활성화
   swcMinify: true,
-
-  // API rewrite
-  async rewrites() {
-    return [
-      {
-        source: '/api/account/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_DOMAIN}/account/:path*`,
-      },
-    ];
-  },
 
   // Webpack 커스터마이징
   webpack(config, { isServer, dev }) {
