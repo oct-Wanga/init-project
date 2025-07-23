@@ -1,0 +1,100 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-btn {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99px;
+}
+
+.icon-btn:disabled,
+.icon-btn.loading {
+  cursor: default;
+}
+
+.icon-btn:disabled svg {
+  color: #afb1b5;
+  fill: #afb1b5;
+}
+
+.icon-btn.loading svg {
+  animation: spin 1s linear infinite;
+}
+
+/* size */
+.w-24 {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99px;
+}
+
+.w-40 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99px;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.w-42 {
+  width: 42px;
+  height: 42px;
+}
+
+.full {
+  width: auto;
+  height: auto;
+}
+
+/* color */
+.tertiary {
+  border: solid 1px #dfe0e1;
+
+  &:not(:disabled, .loading):hover {
+    border: solid 1px #bfc0c4;
+    background-color: #fafafa;
+  }
+
+  &:not(:disabled, .loading):active,
+  &:not(:disabled, .loading).active {
+    border: solid 1px #bfc0c4;
+    background-color: #f4f4f5;
+  }
+
+  &.loading {
+    border: solid 1px #eaeaeb;
+  }
+
+  &:disabled {
+    border: solid 1px #eaeaeb;
+  }
+}
+
+.transparent {
+  &:not(:disabled, .loading):hover {
+    background-color: #fafafa;
+  }
+
+  &:not(:disabled, .loading):active,
+  &:not(:disabled, .loading).active {
+    background-color: #f4f4f5;
+  }
+}
