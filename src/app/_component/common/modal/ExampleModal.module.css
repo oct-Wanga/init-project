@@ -1,0 +1,58 @@
+.modal-body {
+  height: 304px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 8px;
+  padding: 32px 32px 36px;
+}
+
+.header-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 54px;
+  margin-left: -8px;
+  align-items: flex-start;
+
+  .main-contents {
+    display: flex;
+
+    .main-text {
+      height: 28px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.56;
+      letter-spacing: -0.25px;
+      text-align: center;
+      color: #131415;
+      display: flex;
+    }
+
+    .cancel-icon {
+      position: absolute;
+      right: 24px;
+
+      &:hover {
+        background-color: unset;
+      }
+
+      &:active {
+        background-color: unset;
+      }
+    }
+  }
+
+  .sub-contents {
+    .sub-text {
+      flex-grow: 1;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.47;
+      letter-spacing: -0.24px;
+      color: #62646a;
+    }
+  }
+}

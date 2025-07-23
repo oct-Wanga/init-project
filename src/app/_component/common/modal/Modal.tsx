@@ -12,24 +12,34 @@ const cx = classNames.bind(styles);
 interface ModalWrapperProps {
   children: React.ReactNode;
 }
+
 function ModalWrapper({ children }: ModalWrapperProps) {
   return <div className={cx('modal-wrapper')}>{children}</div>;
 }
 
-interface ModalTitleProps {
-  title: string;
-  warning?: boolean;
-  titleLine?: boolean;
+interface IHeaderText {
+  main: string;
+  sub?: string;
 }
-function Header({ title, warning, titleLine }: ModalTitleProps) {
+
+interface ModalHeaderProps {
+  contents: IHeaderText | React.ReactNode;
+}
+
+function Header({ contents }: ModalHeaderProps) {
+  const isTextObject = (value: ModalHeaderProps['contents']): value is IHeaderText =>
+    typeof value === 'object' && value !== null && 'main' in value;
+
   return (
-    <div
-      className={cx('modal-header', {
-        'title-line': titleLine,
-      })}
-    >
-      {warning && <Icon.Warning size="w-40" />}
-      <span>{title}</span>
+    <div className={cx('modal-header')}>
+      {isTextObject(contents) ? (
+        <div className={cx('text-wrapper')}>
+          <span className={cx('main-text')}>{contents.main}</span>
+          {contents.sub && <span className={cx('sub-text')}>{contents.sub}</span>}
+        </div>
+      ) : (
+        contents
+      )}
     </div>
   );
 }
@@ -41,43 +51,29 @@ interface ModalFooterProps {
   isLoading?: boolean;
   isDisabled?: boolean;
   isHideCancelButton?: boolean;
-  paddingBotton?: 'pb-20' | 'pb-24';
-  shouldAutoClose?: boolean;
 }
-function Footer({
-  onClose,
-  onSubmit,
-  submitText,
-  isLoading,
-  isDisabled,
-  isHideCancelButton,
-  paddingBotton = 'pb-20',
-  shouldAutoClose = true,
-}: ModalFooterProps) {
+
+function Footer({ onClose, onSubmit, submitText, isLoading, isDisabled, isHideCancelButton }: ModalFooterProps) {
   const { onCloseModal } = useModalStore();
 
   const handleCancel = () => {
-    if (onClose) {
-      onClose();
-    }
+    if (onClose) onClose();
     onCloseModal();
   };
 
   const handleSubmit = () => {
     onSubmit();
-    if (shouldAutoClose) {
-      onCloseModal();
-    }
+    onCloseModal();
   };
 
   return (
-    <div className={cx('modal-footer', paddingBotton)}>
+    <div className={cx('modal-footer')}>
       {!isHideCancelButton && (
-        <Button size="modal" variant="transparent" onClick={handleCancel}>
-          취소
+        <Button size="h-38" variant="transparent" onClick={handleCancel}>
+          Text
         </Button>
       )}
-      <Button size="modal" variant="secondary" loading={isLoading} disabled={isDisabled} onClick={handleSubmit}>
+      <Button size="h-38" variant="secondary" loading={isLoading} disabled={isDisabled} onClick={handleSubmit}>
         {submitText}
       </Button>
     </div>

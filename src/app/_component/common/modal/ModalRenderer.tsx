@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Fragment, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import classNames from 'classnames/bind';
 import PortalRenderer from '@lib/PortalRenderer';
 import useModalStore from '@store/useModalStore';
@@ -16,12 +16,13 @@ const cx = classNames.bind(styles);
 function ModalRenderer() {
   const { modals, resetModal } = useModalStore();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (modals.length > 0) {
       resetModal();
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   useEffect(() => {
     if (modals.length > 0) {
