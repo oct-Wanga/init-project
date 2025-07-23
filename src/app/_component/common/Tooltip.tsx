@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ForwardedRef, forwardRef, useImperativeHandle, useState } from 'react';
 import classNames from 'classnames/bind';
 import { Placement } from 'tippy.js';
+import type { Options as PopperOptions } from '@popperjs/core';
 import Tippy from '@tippyjs/react';
 
 import styles from './Tooltip.module.css';
@@ -12,28 +13,43 @@ interface TooltipProps {
   theme?: string;
   placement?: Placement;
   arrow?: boolean;
-  rootClassName?: string;
+  tippyClassName?: string;
   childClassName?: string;
   children: React.ReactNode;
   disabled?: boolean;
   visible?: boolean;
   offset?: [number, number];
-  onClick?: () => void;
+  trigger?: string;
+  onClickOutside?: () => void;
+  onShow?: () => void;
+  onHide?: () => void;
+  popperOptions?: Partial<PopperOptions>;
 }
 
-export default function Tooltip({
-  label,
-  placement = 'top',
-  theme,
-  arrow = false,
-  rootClassName,
-  childClassName,
-  children,
-  disabled = false,
-  visible,
-  offset,
-  onClick,
-}: TooltipProps) {
+interface TooltipHandle {
+  hide: () => void;
+}
+
+function Tooltip(props: TooltipProps, ref: ForwardedRef<TooltipHandle>) {
+  const {
+    label,
+    placement = 'top',
+    theme,
+    arrow = false,
+    tippyClassName,
+    childClassName,
+    children,
+    disabled = false,
+    visible,
+    offset,
+    trigger,
+    onShow,
+    onHide,
+    onClickOutside,
+    popperOptions,
+  } = props;
+
+  const [tippyInstance, setTippyInstance] = useState<any>(null);
   const setTippy = () => {
     if (React.isValidElement(label)) return label;
     switch (theme) {
@@ -42,7 +58,12 @@ export default function Tooltip({
     }
   };
 
-  const tippyClassName = cx('shadow', rootClassName);
+  useImperativeHandle(ref, () => ({
+    hide: () => {
+      tippyInstance?.hide();
+    },
+  }));
+
   const childWrapperClassName = cx('content', childClassName);
 
   return (
@@ -57,8 +78,16 @@ export default function Tooltip({
       visible={visible}
       interactive
       appendTo={() => document.body}
+      trigger={trigger}
+      onCreate={instance => setTippyInstance(instance)}
+      onClickOutside={onClickOutside}
+      onShow={onShow}
+      onHide={onHide}
+      popperOptions={popperOptions}
     >
       <div className={childWrapperClassName}>{children}</div>
     </Tippy>
   );
 }
+
+export default forwardRef(Tooltip);

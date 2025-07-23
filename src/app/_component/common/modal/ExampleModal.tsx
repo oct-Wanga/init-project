@@ -10,11 +10,6 @@ import styles from './CountrySelectModal.module.css';
 
 const cx = classNames.bind(styles);
 
-interface CountryInfo {
-  name: string;
-  imgSrc: string;
-}
-
 function HeaderContent() {
   const { onCloseModal } = useModalStore();
 
@@ -45,13 +40,13 @@ export default function CountrySelectModal() {
   return (
     <div className={cx('wrap')}>
       <Modal>
-        <Modal.Header isShowLine padding="ptb-28" contents={<HeaderContent />} />
+        <Modal.Header contents={<HeaderContent />} />
         <div className={cx('modal-body')}>
           <div>Test 1</div>
           <div>Test 2</div>
           <div>Test 3</div>
         </div>
-        <Modal.Footer submitText="제출" onSubmit={() => {}} padding="ptb-32" />
+        <Modal.Footer submitText="제출" onSubmit={() => {}} />
       </Modal>
     </div>
   );
