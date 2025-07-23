@@ -19,7 +19,7 @@ const useToastStore = createWithEqualityFn<IToastState>(
   (set, get) => ({
     toasts: [],
     openToast: (Component: JSX.Element) => {
-      set({ toasts: [...get().toasts, { Component }] });
+      set({ toasts: [...[], { Component }] });
     },
     closeToast: () => {
       set({ toasts: [...get().toasts.slice(0, get().toasts.length - 1)] });
